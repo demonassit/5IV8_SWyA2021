@@ -49,6 +49,8 @@ public class EjemploDES {
         //la llave la podemos crear a partir de una funcion generica
         //llamada funcion hash   MD5
         //una secuencia de numeros pseudoaleatorios
+        
+        //debe de pedir la llave debe de ser de 64 bits = 8 letras
         KeyGenerator generadorDES = KeyGenerator.getInstance("DES");
         
         //inicializar la llave
