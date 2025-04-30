@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Bienvenida</title>
+</head>
+<body>
+  <h2>¡Bienvenido!</h2>
+  <p id="mensaje"></p>
+  <button onclick="verDashboard()">Ver información protegida</button>
+  <p id="dashboard"></p>
+  <button onclick="logout()">Cerrar sesión</button>
+
+  <script>
+    const email = localStorage.getItem("email");
+    document.getElementById("mensaje").innerText = `Hola, ${email}. Has iniciado sesión correctamente.`;
+
+    async function verDashboard() {
+      const token = localStorage.getItem("token");
+
+      const res = await fetch("http://localhost:3000/dashboard", {
+        headers: { Authorization: token }
+      });
+
+      const text = await res.text();
+      document.getElementById("dashboard").innerText = text;
+    }
+
+    function logout() {
+      localStorage.clear();
+      window.location.href = "index.html";
+    }
+  </script>
+</body>
+</html>

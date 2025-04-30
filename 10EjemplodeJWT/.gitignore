@@ -20,9 +20,3 @@ Thumbs.db
 # Build files
 dist/
 build/
-
-
-/03_DES/target/
-/04_AES/target/
-/06_RSA_LIB/target/
-/09_ExportarFirmas/target/
